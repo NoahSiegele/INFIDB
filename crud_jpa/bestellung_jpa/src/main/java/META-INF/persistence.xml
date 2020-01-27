@@ -3,11 +3,14 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 	<persistence-unit name="MyUnit" transaction-type="RESOURCE_LOCAL">
-	<class>database.jpa_example.Person</class>
-	<class>database.jpa_example.Hobby</class>
+	<class>database.bestellung_jpa.Adresse</class>
+	<class>database.bestellung_jpa.Artikel</class>
+	<class>database.bestellung_jpa.Bestellung_Artikel</class>
+	<class>database.bestellung_jpa.Bestellung</class>
+	<class>database.bestellung_jpa.Kunde</class>
 		<properties>
 			<property name="eclipselink.jdbc.batch-writing" value="JDBC"/>
-			<property name="eclipselink.ddl-generation" value="create-or-extend-tables"/>
+			<property name="eclipselink.ddl-generation" value="create-and-extend-table"/>
 			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/order_db"/>
 			<property name="javax.persistence.jdbc.user" value="postgres"/>
 			<property name="javax.persistence.jdbc.password" value="noah2000"/>
