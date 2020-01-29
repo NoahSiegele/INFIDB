@@ -54,10 +54,7 @@ public class Bestellung_Artikel implements Serializable {
 	
 	
 
-	@Override
-	public String toString() {
-		return "Bestellung_Artikel [id=" + id + ", menge=" + menge + "]";
-	}
+	
 
 
 	@Override
@@ -96,6 +93,13 @@ public class Bestellung_Artikel implements Serializable {
 		if (menge != other.menge)
 			return false;
 		return true;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Bestellung_Artikel [id=" + id + ", bestellung=" + bestellung + ", artikel=" + artikel + ", menge="
+				+ menge + "]";
 	}
 	
 }

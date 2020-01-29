@@ -82,6 +82,14 @@ private double preis;
 			return false;
 		return true;
 	}
+
+	@Override
+	public String toString() {
+		return "Artikel [id=" + id + ", artikelname=" + artikelname + ", preis=" + preis + ", bestellung1="
+				+ bestellung1 + "]";
+	}
+	
+	
 	
 	
 }
