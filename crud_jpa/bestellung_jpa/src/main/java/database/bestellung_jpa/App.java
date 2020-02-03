@@ -30,12 +30,24 @@ public class App {
 			System.out.println("Bitte geben Sie BESTELLUNG, BESTELLUNG_ARTIKEL, ARTIKEL, ADRESSE oder KUNDE ein: ");
 			String x = s.next();
 			if (x.equalsIgnoreCase("BESTELLUNG")) {
+				List<Kunde> z = m.createQuery("SELECT a FROM Kunde a", Kunde.class).getResultList();
+				for (int i = 0; i < z.size(); i++) {
+					System.out.println(z.get(i));
+				}
 				System.out.println("KundenID: ");
 				long kundenID = s.nextInt();
 				Kunde a = m.find(Kunde.class, kundenID);
 				System.out.println("LieferadresseID: ");
+				List<Adresse> y = m.createQuery("SELECT a FROM Adresse a", Adresse.class).getResultList();
+				for (int i = 0; i < y.size(); i++) {
+					System.out.println(y.get(i));
+				}
 				long lieferID = s.nextInt();
 				Adresse b = m.find(Adresse.class, lieferID);
+				List<Adresse> q = m.createQuery("SELECT a FROM Adresse a", Adresse.class).getResultList();
+				for (int i = 0; i < q.size(); i++) {
+					System.out.println(q.get(i));
+				}
 				System.out.println("RechnungsadresseID: ");
 				long rechnungID = s.nextInt();
 				Adresse c = m.find(Adresse.class, rechnungID);
@@ -44,9 +56,17 @@ public class App {
 				m.persist(d);
 				m.getTransaction().commit();
 			} else if (x.equalsIgnoreCase("BESTELLUNG_ARTIKEL")) {
+				List<Bestellung> y = m.createQuery("SELECT a FROM Bestellung a", Bestellung.class).getResultList();
+				for (int i = 0; i < y.size(); i++) {
+					System.out.println(y.get(i));
+				}
 				System.out.println("BestellID: ");
 				long bestellID = s.nextInt();
 				Bestellung a = m.find(Bestellung.class, bestellID);
+				List<Artikel> q = m.createQuery("SELECT a FROM Artikel a", Artikel.class).getResultList();
+				for (int i = 0; i < q.size(); i++) {
+					System.out.println(q.get(i));
+				}
 				System.out.println("ArtikelID: ");
 				long artikelID = s.nextInt();
 				Artikel b = m.find(Artikel.class, artikelID);
