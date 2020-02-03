@@ -2,20 +2,22 @@ package database.bestellung_jpa;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import org.eclipse.persistence.annotations.CascadeOnDelete;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Table(name = "bestellung_artikel")
+@CascadeOnDelete
 public class Bestellung_Artikel implements Serializable {
 	/**
 	 * 
@@ -29,11 +31,13 @@ public class Bestellung_Artikel implements Serializable {
 	@Getter
 	@Setter
 	@ManyToOne
+	@CascadeOnDelete
 	//@JoinColumn(name = "Bestellung_id")
 	private Bestellung bestellung;
 	@Getter
 	@Setter
-	@ManyToOne
+	@ManyToOne(cascade=CascadeType.ALL)
+	@CascadeOnDelete
 	//@JoinColumn(name = "Artikel_id")
 	private Artikel artikel;
 	@Getter

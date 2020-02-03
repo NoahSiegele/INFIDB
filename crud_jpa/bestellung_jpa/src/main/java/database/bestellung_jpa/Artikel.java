@@ -1,6 +1,7 @@
 package database.bestellung_jpa;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -10,11 +11,14 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.eclipse.persistence.annotations.CascadeOnDelete;
+
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Table(name = "artikel")
+@CascadeOnDelete
 public class Artikel {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -29,11 +33,12 @@ private String artikelname;
 private double preis;
 	@Getter
 	@Setter
+	@CascadeOnDelete
 	@OneToMany(
-			cascade = CascadeType.PERSIST
-			
+			cascade={CascadeType.ALL},
+			orphanRemoval=true
 			)
-	private ArrayList<Bestellung_Artikel> bestellung1 = new ArrayList<Bestellung_Artikel>();
+	private List<Bestellung_Artikel> bestellung1;
 	
 	public Artikel() {
 		super();
