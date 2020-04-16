@@ -1,0 +1,2 @@
+UNDO in einer Datenbank:
+Dazu wäre es sinnvoll Trigger in Betracht zu ziehen. Wird nun ein Insert, Update, etc. vollzogen, kommt der Trigger zum Zug. Dabei wird eine Funktion ausgeführt, welche beispielsweise die ID in eine Verlaufstabelle speichert. Nun ist es möglich den Schritt rückgängig zu machen, indem ein Delete mithilfe der ID ausgeführt wird. So ähnlich funktioniert das Ganze auch bei anderen Methoden, wobei andere Parameter in einer Verlaufstabelle gespeichert werden müssen, um diese wieder rückgängig machen zu können.
