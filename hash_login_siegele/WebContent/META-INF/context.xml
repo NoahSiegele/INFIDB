@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<context>
+<Resource
+	name="jdbc/hash_login"
+	auth="container"
+	type="javax.sql.DataSource"
+	maxActive="10"
+	maxIdle="4"
+	username="postgres"
+	password="noah2000"
+	driverClassName="org.postgresql.Driver"
+	url="jdbc:postgresql://127.0.0.1:5432/hash_login"
+	/>
+</context>
